@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                    }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+table {
+            width: 1200px;
+            border-collapse: collapse;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-radius: 10px;
+            margin: 0;
+            height: 300px;
+            margin-right:-10px;
+            margin-left:-10px;
+
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        td {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        tr:last-child td {
+            border-bottom: none;;
+        }
+        .action-links a {
+            padding: 10px 12px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-right: 5px;
+        }
+        .action-links .delete {
+            background-color: #e74c3c;
+        }
+        .action-links .edit {
+            background-color: #3498db;
+        }
+    </style>
+    <title>CRUD OPERATIONS</title>
+</head>
+<body>
+<br><br>  
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>content</th>
+                    <th>Title</th>
+                    <th>description</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in b %}
+                <tr>
+                    <td>{{ i.content }}</td>
+                    <td>{{ i.Title }}</td>
+                    <td>{{ i.description }}</td>
+                    <td class="action-links">
+                        <a href="/cabfaq_crud_del/{{ i.id }}" class="delete"><i class="fas fa-trash-alt"></i> </a>
+                    </td>
+
+                    <td class="action-links">
+                        <a href="/cabfaq_crud_edit/{{ i.id }}" class="edit"><i class="fas fa-edit"></i></a>
+                    </td>
+
+            </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

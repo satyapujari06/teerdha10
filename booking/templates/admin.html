@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Admin Dashboard</title>
+    <style>
+        /* CSS styles */
+        /* Define your styles here */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            padding-top: 20px;
+        }
+        
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .sidebar ul li {
+            padding: 8px 15px;
+            border-bottom: 1px solid #555;
+        }
+        
+        .sidebar ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
+            <li><a href="#" onclick="showUsers()">Users</a></li>
+            <li><a href="#" onclick="showSettings()">Settings</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content" id="dashboard">
+        <h2>Dashboard</h2>
+        <p>Welcome to the admin dashboard. Here you can see various statistics and data related to your website or application.</p>
+    </div>
+
+    <div class="content" id="users" style="display: none;">
+        <h2>Users</h2>
+        <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+    </div>
+
+    <div class="content" id="settings" style="display: none;">
+        <h2>Settings</h2>
+        <p>Adjust the settings of your application or website here. You can configure preferences, security options, and more.</p>
+    </div>
+
+    <!-- JavaScript functionality -->
+    <script>
+        function showDashboard() {
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('users').style.display = 'none';
+            document.getElementById('settings').style.display = 'none';
+        }
+
+        function showUsers() {
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('users').style.display = 'block';
+            document.getElementById('settings').style.display = 'none';
+        }
+
+        function showSettings() {
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('users').style.display = 'none';
+            document.getElementById('settings').style.display = 'block';
+        }
+
+        function logout() {
+            // Perform logout functionality
+        }
+    </script>
+</body>
+</html>

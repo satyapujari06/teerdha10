@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+                body {
+                    font-family:'poppins';
+                    background-color: #f0f0f0;
+                    margin: 0;
+                    padding: 0;
+                }
+        
+                .container {
+                    width: 80%;
+                    margin: 20px auto;
+                }
+        
+                h1 {
+                    color: red;
+                    text-align: center;
+                    text-decoration: underline;
+                }
+        
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                    background-color: white;
+                    border: 1px solid #ddd;
+                    margin-left: -110px;
+                }
+        
+                th, td {
+                    padding: 15px;
+                    text-align: center;
+                }
+        
+                th {
+                    background-color: cornflowerblue;
+                    color: white;
+                }
+        
+                td a {
+                    text-decoration: none;
+                    display: inline-block;
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    margin-right: 5px;
+                    color: #333;
+                    font-weight: bold;
+                }
+                td a.delete {
+                  font-weight: bold;
+                  color: red;
+                }
+                td a.edit {
+                   font-weight: bold;
+                   color: green;
+                }
+              
+        
+                .btn-primary {
+                    background-color: white;
+                    color: cornflowerblue;
+                    font-style: italic;
+                    font-size: 25px;
+                    border-radius: 10px;
+                    border: 1px solid black;
+                    padding: 10px 20px;
+                    display: block;
+                    margin: 20px auto;
+                    text-align: center;
+                    text-decoration: none;
+                    font-weight: bold;
+                }       
+        </style>
+    </head>
+    <body>
+    
+    <div class="container">
+
+        <h1><u><b><i> WHY CHOOSE US?  </i></b></u></h1><br>
+       
+    
+        <a href="/bus_whychoose_form/" class="btn-primary" style="width: 650px;margin-left: 190px;">WHYCHOOSE-CONTENT-FORM</a>
+    
+        <table border="1" style="width: 1250PX;">
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            {% for i in k2 %}
+            <tr>
+                <td>{{i.title}}</td>
+                <td>{{i.content}}</td>
+                
+                
+                <td><a href="/bus_whychoose_delete/{{i.id}}" class="delete"><i class="fas fa-trash-alt"></i> Delete</a></td>
+                <td><a href="/bus_whychoose_edit/{{i.id}}" class="edit"><i class="fas fa-edit"></i> Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+    </body>
+    </html><br><br><br>
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <style>
+                    body {
+                        font-family: 'poppins';
+                        background-color: #f0f0f0;
+                        margin: 0;
+                        padding: 0;
+                    }
+            
+                    .container {
+                        width: 80%;
+                        margin: 20px auto;
+                    }
+            
+                    h1 {
+                        color: red;
+                        text-align: center;
+                        text-decoration: underline;
+                    }
+            
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-top: 20px;
+                        background-color: white;
+                        border: 1px solid #ddd;
+                        margin-left: -110px;
+                    }
+            
+                    th, td {
+                        padding: 15px;
+                        text-align: center;
+                    }
+            
+                    th {
+                        background-color: cornflowerblue;
+                        color: white;
+                    }
+            
+                    td a {
+                        text-decoration: none;
+                        display: inline-block;
+                        padding: 8px 15px;
+                        border-radius: 5px;
+                        margin-right: 5px;
+                        color: #333;
+                        font-weight: bold;
+                    }
+                    td a.delete {
+                      font-weight: bold;
+                      color: red;
+                    }
+                    td a.edit {
+                       font-weight: bold;
+                       color: green;
+                    }
+                  
+            
+                    .btn-primary {
+                        background-color: white;
+                        color: cornflowerblue;
+                        font-style: italic;
+                        font-size: 25px;
+                        border-radius: 10px;
+                        border: 1px solid black;
+                        padding: 10px 20px;
+                        display: block;
+                        margin: 20px auto;
+                        text-align: center;
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+                   
+                </style>
+            </head>
+            <body>
+            
+            <div class="container">
+                <h1><u><b><i> FAQ'S OF TEERDHA </i></b></u></h1><br>
+            
+                <a href="/faq_form/" class="btn-primary" style="width: 650px;">FAQ-CONTENT-FORM</a>
+            
+                <table border="1" style="width: 1250PX;">
+                    <tr>
+                        <th>Description1</th>
+                        <th>Description2</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                    {% for i in k1 %}
+                    <tr>
+                        <td>{{i.description1}}</td>
+                        <td>{{i.description2}}</td>
+                        <td><a href="/faq_delete/{{i.id}}" class="delete"><i class="fas fa-trash-alt"></i> Delete</a></td>
+                        <td><a href="/faq_edit/{{i.id}}" class="edit"><i class="fas fa-edit"></i> Edit</a></td>
+                       
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </body>
+    </html><br><br><br>
+    
+         
+        
+        
+    
+       
+    
+    
+   
