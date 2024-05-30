@@ -31,10 +31,10 @@ class cab_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=cab_serialization
 
 def cab_main(request):
-    nav=navbar.objects.all()
     if request.method=="GET":
         #ad=requests.get("http://127.0.0.1:8000/cab_insert/")
        # res=ad.json()
+        nav=navbar.objects.all()
         res=cab_cards.objects.all()
         k3 = cabwhycontents.objects.all()
         b = cab_faq.objects.all()
