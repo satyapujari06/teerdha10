@@ -192,7 +192,7 @@ def paytm_card_main(request):
     if request.method=="GET":
         #ad=requests.get("http://127.0.0.1:8000/paytm_card_insert/")
         #res=ad.json()
-        res= cab_paytm_card.objects.all(
+        res= cab_paytm_card.objects.all()
         return render(request,"cab_templates/paytm_card.html",{'res':res})
 
 ##########################  why choose content for cabs #######################
