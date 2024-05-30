@@ -25,19 +25,27 @@ class faq_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=flightfaqs_serialization    
 
 
+#def flights(request):
+#    if request.method=="GET":
+#        nav=navbar.objects.all()
+#        ad=requests.get("http://127.0.0.1:8000/flight_home/")
+ #       res=ad.json()
+ #       k=requests.get('http://127.0.0.1:8000/faqsapi/')
+ #       rest=k.json()
+ #       wc = requests.get("http://127.0.0.1:8000/why_choose_lc/")
+  #      wcu = wc.json()
+   #     ch = requests.get("http://127.0.0.1:8000/choose_us/")
+   #     wch = ch.json()      
+    #    return render(request,"flight_templates/c.html",{'nav':nav,'res':res,'rest':rest,'wcu':wcu,'wch':wch})
+
 def flights(request):
     if request.method=="GET":
         nav=navbar.objects.all()
-        ad=requests.get("http://127.0.0.1:8000/flight_home/")
-        res=ad.json()
-        k=requests.get('http://127.0.0.1:8000/faqsapi/')
-        rest=k.json()
-        wc = requests.get("http://127.0.0.1:8000/why_choose_lc/")
-        wcu = wc.json()
-        ch = requests.get("http://127.0.0.1:8000/choose_us/")
-        wch = ch.json()      
+        res=flights_offercards.objects.all() #ad.json()
+        rest=faqs.objects.all() #k.json()
+        wcu =why_choose.objects.all() # wc.json()
+        wch =choosing_content.objects.all() # ch.json()      
         return render(request,"flight_templates/c.html",{'nav':nav,'res':res,'rest':rest,'wcu':wcu,'wch':wch})
-
 
 class kotak_api(generics.ListCreateAPIView):
     queryset=flights_kotak_offer.objects.all()
@@ -81,16 +89,21 @@ class kotakpolicy_update1(generics.RetrieveUpdateDestroyAPIView):
 
 def kotak(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/kotak_api/")
-        rdx=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/kotak_api1/")
-        rx=sk.json()
-        sj=requests.get("http://127.0.0.1:8000/kotakterms_api/")
-        rs=sj.json()
-        si=requests.get("http://127.0.0.1:8000/kotakpolicy_api/")
-        rd=si.json()
-        sl=requests.get("http://127.0.0.1:8000/kotakpolicy_api1/")
-        rp=sl.json()
+       # sh=requests.get("http://127.0.0.1:8000/kotak_api/")
+       # rdx=sh.json()
+        rdx=flights_policy1.objects.all()
+       # sk=requests.get("http://127.0.0.1:8000/kotak_api1/")
+       # rx=sk.json()
+        rx=flights_policy1.objects.all()
+       # sj=requests.get("http://127.0.0.1:8000/kotakterms_api/")
+       # rs=sj.json()
+        rs=flights_policy1.objects.all()
+       # si=requests.get("http://127.0.0.1:8000/kotakpolicy_api/")
+       # rd=si.json()
+        rd=flights_policy1.objects.all()
+       # sl=requests.get("http://127.0.0.1:8000/kotakpolicy_api1/")
+       # rp=sl.json()
+        rp=flights_policy1.objects.all()
         
         return render(request,"flight_templates/kotak_offer.html",{'rdx':rdx,'rx':rx,'rs':rs,'rd':rd,'rp':rp})
 
@@ -116,10 +129,12 @@ class flight_offerfirst1_rud(generics.RetrieveUpdateDestroyAPIView):
 
 def flight_offer_1(request):
     if request.method == "GET":
-        fo = requests.get("http://127.0.0.1:8000/flight_offerfirst_lc/")
-        flight = fo.json()
-        fo1 = requests.get("http://127.0.0.1:8000/flight_offerfirst1_lc/")
-        flight_1 = fo1.json()
+        #fo = requests.get("http://127.0.0.1:8000/flight_offerfirst_lc/")
+       # flight = fo.json()
+        flight = flight_offer_first.objects.all()
+       # fo1 = requests.get("http://127.0.0.1:8000/flight_offerfirst1_lc/")
+        #flight_1 = fo1.json()
+        flight_1 = flight_offer_first1.objects.all()
         return render(request,"flight_templates/flight_offer_1.html", {'flight': flight, 'flight_1': flight_1})
 
 
