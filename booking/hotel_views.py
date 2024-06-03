@@ -63,8 +63,8 @@ def hotel_axisform(request):
         #rx=sk.json()
         #si=requests.get("http://127.0.0.1:8000/axispolicy_api/")
         #rd=si.json()
-        rdx=hotel_axispolicy.objects.all()
-        rx=hotel_axispolicy.objects.all()
+        rdx=hotel_axisoffer.objects.all()
+        rx=hotel_axisoffer1.objects.all()
         rd=hotel_axispolicy.objects.all()
         return render(request,"hotel_templates/axis_offer.html",{'rdx':rdx,'rx':rx,'rd':rd})
 
@@ -106,7 +106,7 @@ def hotel_iciciform(request):
        # r=si.json()
         p=hotel_icicioffer.objects.all()
         q=hotel_icicioffer1.objects.all()
-        r=hotel_icicioffer1.objects.all()
+        r=hotel_icicipolicy.objects.all()
         return render(request,"hotel_templates/icici_offer.html",{'p':p,'q':q,'r':r})
 
 
@@ -149,7 +149,7 @@ def hotel_hsbcform(request):
        # rj=si.json()
         sp=hotel_hsbcoffer.objects.all()
         pq=hotel_hsbcoffer1.objects.all()
-        rj=hotel_hsbcoffer1.objects.all()
+        rj=hotel_hsbcpolicy.objects.all()
         return render(request,"hotel_templates/hsbc_offer.html",{'sp':sp,'pq':pq,'rj':rj})
 
 #...SBI...#
@@ -189,8 +189,8 @@ def hotel_sbiform(request):
         #si=requests.get("http://127.0.0.1:8000/sbipolicy_api/")
         #pspk=si.json()
         ps=hotel_sbioffer.objects.all()
-        pk=hotel_sbioffer.objects.all()
-        pspk=hotel_sbioffer1.objects.all()
+        pk=hotel_sbioffer1.objects.all()
+        pspk=hotel_sbipolicy.objects.all()
         return render(request,"hotel_templates/sbi_offer.html",{'ps':ps,'pk':pk,'pspk':pspk})
 
 #...KOTAK...#
@@ -230,8 +230,8 @@ def hotel_kotakform(request):
         #si=requests.get("http://127.0.0.1:8000/hotel_kotakpolicyapi/")
         #cid=si.json()
         aib=hotel_kotakoffer.objects.all()
-        bic=hotel_kotakoffer.objects.all()
-        cid=hotel_kotakoffer1.objects.all()
+        bic=hotel_kotakoffer1.objects.all()
+        cid=hotel_kotakpolicy.objects.all()
         return render(request,"hotel_templates/hotel_kotakoffer.html",{'aib':aib,'bic':bic,'cid':cid})
 
 
@@ -273,8 +273,8 @@ def hotel_bobform(request):
        # si=requests.get("http://127.0.0.1:8000/hotel_bobpolicyapi/")
         #bob2=si.json()
         bob=hotel_boboffer.objects.all()
-        bob1=hotel_boboffer.objects.all()
-        bob2=hotel_boboffer1.objects.all()
+        bob1=hotel_boboffer1.objects.all()
+        bob2=hotel_bobpolicy.objects.all()
         return render(request,"hotel_templates/hotel_boboffer.html",{'bob':bob,'bob1':bob1,'bob2':bob2})
 
 
@@ -315,8 +315,8 @@ def hotel_federalform(request):
        # si=requests.get("http://127.0.0.1:8000/federalpolicy_api/")
        # cdi=si.json()
         abi=hotel_federaloffer.objects.all()
-        bci=hotel_federaloffer.objects.all()
-        cdi=hotel_federaloffer1.objects.all()
+        bci=hotel_federaloffer1.objects.all()
+        cdi=hotel_federalpolicy.objects.all()
         return render(request,"hotel_templates/federal_offer.html",{'abi':abi,'bci':bci,'cdi':cdi})
 
 
