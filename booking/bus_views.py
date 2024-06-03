@@ -207,7 +207,7 @@ def bus_main2(request):
         res20 = bus_go_image2.objects.all()
         res15 = bus_go_container2.objects.all()
         res16 = bus_go_benefits2.objects.all()
-        res17 = =bus_go_terms2.objects.all()
+        res17 = bus_go_terms2.objects.all()
         res_cancel=bus_go_cancel.objects.all()
         return render(request, "bus_templates/trendcard2.html", {'res6': res6, 'res20': res20, 'res15': res15, 'res16': res16, 'res17': res17, 'res_cancel': res_cancel})
 
