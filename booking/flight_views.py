@@ -172,12 +172,15 @@ class card1_offerterms_up(generics.RetrieveUpdateDestroyAPIView):
 
 def yes_bank_offercard(request):
     if request.method=="GET":
-        co=requests.get("http://127.0.0.1:8000/card1_offer/")
-        res1=co.json()
-        cod=requests.get("http://127.0.0.1:8000/card1_offerdet/")
-        res2=cod.json()
-        cot=requests.get("http://127.0.0.1:8000/card1_offerterms/")
-        res3=cot.json()
+      #  co=requests.get("http://127.0.0.1:8000/card1_offer/")
+      #  res1=co.json()
+      #  cod=requests.get("http://127.0.0.1:8000/card1_offerdet/")
+      #  res2=cod.json()
+      #  cot=requests.get("http://127.0.0.1:8000/card1_offerterms/")
+      #  res3=cot.json()
+        res1=card1_offers.objects.all()
+        res2=card1_offerdetailes.objects.all()
+        res3=card1_terms_conditions.objects.all()
         return render(request,"flight_templates/yes_bank_offercard.html",{'res1':res1,'res2':res2,'res3':res3})
 
 ##........refundcards........##
@@ -204,10 +207,12 @@ class zc_terms_update(generics.RetrieveUpdateDestroyAPIView):
 
 def zerocancellation(request):
     if request.method=="GET":
-        zco=requests.get("http://127.0.0.1:8000/zero_offer/")
-        res1=zco.json()
-        zct=requests.get("http://127.0.0.1:8000/zero_terms/")
-        res2=zct.json()
+      #  zco=requests.get("http://127.0.0.1:8000/zero_offer/")
+      #  res1=zco.json()
+      #  zct=requests.get("http://127.0.0.1:8000/zero_terms/")
+      #  res2=zct.json()
+        res1=Zero_cancellation_offer.objects.all()
+        res2=Zero_cancellation_terms.objects.all()
         return render(request,"flight_templates/zero_offer.html",{'res1':res1,'res2':res2})  
 
 #......why choose us...#
@@ -254,10 +259,12 @@ class icic_terms_update(generics.RetrieveUpdateDestroyAPIView):
 
 def icic(request):
     if request.method=="GET":
-        zco=requests.get("http://127.0.0.1:8000/icic_offer/")
-        res1=zco.json()
-        zct=requests.get("http://127.0.0.1:8000/icic_terms/")
-        res2=zct.json()
+     #   zco=requests.get("http://127.0.0.1:8000/icic_offer/")
+     #   res1=zco.json()
+     #  zct=requests.get("http://127.0.0.1:8000/icic_terms/")
+      #  res2=zct.json()
+        res1=icic_offer.objects.all()
+        res2=icic_terms.objects.all()
         return render(request,"flight_templates/icici.html",{'res1':res1,'res2':res2})        
     
 from .models import sbiimage,sbioffer,sbiterms
@@ -291,12 +298,15 @@ class sbiterms_up(generics.RetrieveUpdateDestroyAPIView):
 
 def sbi(request):
     if request.method=="GET":
-        si=requests.get("http://127.0.0.1:8000/sbi_image/")
-        res1=si.json()
-        so=requests.get("http://127.0.0.1:8000/sbi_offer/")
-        res2=so.json()
-        st=requests.get("http://127.0.0.1:8000/sbi_terms/")
-        res3=st.json()
+      #  si=requests.get("http://127.0.0.1:8000/sbi_image/")
+      #  res1=si.json()
+      #  so=requests.get("http://127.0.0.1:8000/sbi_offer/")
+      #  res2=so.json()
+      # st=requests.get("http://127.0.0.1:8000/sbi_terms/")
+      #  res3=st.json()
+        res1=sbiimage.objects.all()
+        res2=sbioffer.objects.all()
+        res3=sbiterms.objects.all()
         return render(request,"flight_templates/sbi.html",{'res1':res1,'res2':res2,'res3':res3})  
 
 class hdfc_logo_lc(generics.ListCreateAPIView):
@@ -317,13 +327,15 @@ class hdfc_offer_rud(generics.RetrieveUpdateDestroyAPIView):
 
 def hdfc_offer_card(request):
     if request.method=="GET":
-        hl=hdfc_logo.objects.all()
+       # hl=hdfc_logo.objects.all()
         # hl=requests.get("http://127.0.0.1:8000/hdfc_logo_lc/")
         # hdfc_logo=hl.json()
-        h=hdfc_offer.objects.all()
+       #  h=hdfc_offer.objects.all()
         # h=requests.get("http://127.0.0.1:8000/hdfc_offer_lc/")
         # hdfc=h.json()
-        return render(request,"flight_templates/hdfc_offer_card.html",{'hdfc':h,'hdfc_logo':hl})  
+        hdfc_logo= hdfc_logo.objects.all()
+        hdfc=hdfc_offer.objects.all()
+        return render(request,"flight_templates/hdfc_offer_card.html",{'hdfc':hdfc,'hdfc_logo':hdfc_logo})  
 
 
 
