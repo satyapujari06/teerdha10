@@ -203,7 +203,7 @@ def bus_main2(request):
        # res16 = ad4.json()
        # res17 = ad5.json()
        # res_cancel=ad_cancel.json()
-        res6 = bus_go_table2.objects.all(
+        res6 = bus_go_table2.objects.all()
         res20 = bus_go_image2.objects.all()
         res15 = bus_go_container2.objects.all()
         res16 = bus_go_benefits2.objects.all()
