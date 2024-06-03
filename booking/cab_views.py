@@ -55,7 +55,7 @@ def festive_main(request):
     if request.method == "GET":
         #ad = requests.get("http://127.0.0.1:8000/festive_insert/")
         #res = ad.json()
-        res=cab_festive.objects.all()
+        res = cab_festive.objects.all()
         return render(request, "cab_templates/festive.html", {'res': res})
 
 
