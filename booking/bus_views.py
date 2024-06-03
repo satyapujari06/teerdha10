@@ -270,7 +270,7 @@ def bus_main3(request):
     if request.method=="GET":
        # ad=requests.get("http://127.0.0.1:8000/bus_home7/")
        # res4=ad.json()
-        res=bus_festival3.objects.all()
+        res4=bus_festival3.objects.all()
         return render(request,"bus_templates/trendcard3.html",{'res4':res4})
 
 
@@ -429,7 +429,7 @@ def bus_main9(request):
     if request.method=="GET":
      #   ad=requests.get(" http://127.0.0.1:8000/bus_home19/")
       #  res8=ad.json()
-        res = bus_weekday8.objects.all()
+        res8 = bus_weekday8.objects.all()
         return render(request,"bus_templates/trendcard8.html",{'res8':res8})
 
 
