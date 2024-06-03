@@ -327,13 +327,13 @@ class hdfc_offer_rud(generics.RetrieveUpdateDestroyAPIView):
 
 def hdfc_offer_card(request):
     if request.method=="GET":
-        hl=hdfc_logo.objects.all()
+        hdfcl=hdfc_logo.objects.all()
         # hl=requests.get("http://127.0.0.1:8000/hdfc_logo_lc/")
-        hdfc_logo=hl.json()
-       #  h=hdfc_offer.objects.all()
+       # hdfc_logo=hl.json()
+        hdfc2=hdfc_offer.objects.all()
         # h=requests.get("http://127.0.0.1:8000/hdfc_offer_lc/")
         # hdfc=h.json()
-        return render(request,"flight_templates/hdfc_offer_card.html",{'hdfc':h,'hdfc_logo':h1})  
+        return render(request,"flight_templates/hdfc_offer_card.html",{'hdfc1':hdfc1,'hdfc2':hdfc2})  
 
 
 
