@@ -168,10 +168,12 @@ class bus_update0(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main1(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/bus_home1/")
-        ad1=requests.get("http://127.0.0.1:8000/bus_home01/")
-        res1=ad.json()
-        res=ad1.json()
+     #   ad=requests.get("http://127.0.0.1:8000/bus_home1/")
+     #   ad1=requests.get("http://127.0.0.1:8000/bus_home01/")
+     #   res1=ad.json()
+     #   res=ad1.json()
+        res1=bus_weekends1.objects.all()
+        res=bus_weekends_terms1.objects.all()
         return render(request,"bus_templates/trendcard1.html",{'res1':res1,'res':res})
 
 ###########  card2  #################
@@ -187,20 +189,26 @@ class bus_update2(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main2(request):
     if request.method == "GET":
-        ad1 = requests.get("http://127.0.0.1:8000/bus_home2/")
-        ad2 = requests.get("http://127.0.0.1:8000/bus_home3/")
-        ad3 = requests.get("http://127.0.0.1:8000/bus_home4/")
-        ad4 = requests.get("http://127.0.0.1:8000/bus_home5/")
-        ad5 = requests.get("http://127.0.0.1:8000/bus_home6/")
-        ad_cancel = requests.get("http://127.0.0.1:8000/bus_cancel/")
+      #  ad1 = requests.get("http://127.0.0.1:8000/bus_home2/")
+      #  ad2 = requests.get("http://127.0.0.1:8000/bus_home3/")
+      #  ad3 = requests.get("http://127.0.0.1:8000/bus_home4/")
+      #  ad4 = requests.get("http://127.0.0.1:8000/bus_home5/")
+      #  ad5 = requests.get("http://127.0.0.1:8000/bus_home6/")
+      #  ad_cancel = requests.get("http://127.0.0.1:8000/bus_cancel/")
         
         
-        res6 = ad1.json()
-        res20 = ad2.json()
-        res15 = ad3.json()
-        res16 = ad4.json()
-        res17 = ad5.json()
-        res_cancel=ad_cancel.json()
+       # res6 = ad1.json()
+       # res20 = ad2.json()
+       # res15 = ad3.json()
+       # res16 = ad4.json()
+       # res17 = ad5.json()
+       # res_cancel=ad_cancel.json()
+        res6 = bus_go_table2.objects.all(
+        res20 = bus_go_image2.objects.all()
+        res15 = bus_go_container2.objects.all()
+        res16 = bus_go_benefits2.objects.all()
+        res17 = =bus_go_terms2.objects.all()
+        res_cancel=bus_go_cancel.objects.all()
         return render(request, "bus_templates/trendcard2.html", {'res6': res6, 'res20': res20, 'res15': res15, 'res16': res16, 'res17': res17, 'res_cancel': res_cancel})
 
 
@@ -260,8 +268,9 @@ class bus_update7(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main3(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/bus_home7/")
-        res4=ad.json()
+       # ad=requests.get("http://127.0.0.1:8000/bus_home7/")
+       # res4=ad.json()
+        res=bus_festival3.objects.all()
         return render(request,"bus_templates/trendcard3.html",{'res4':res4})
 
 
@@ -297,15 +306,16 @@ class bus_update10(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main4(request):
     if request.method == "GET":
-        ad1 = requests.get("http://127.0.0.1:8000/bus_home8/")
-        ad2 = requests.get("http://127.0.0.1:8000/bus_home9/")
-        ad3 = requests.get("http://127.0.0.1:8000/bus_home10/")
-        
-        
-        res8 = ad1.json()
-        res9 = ad2.json()
-        res10 = ad3.json()
-        
+      #  ad1 = requests.get("http://127.0.0.1:8000/bus_home8/")
+      #  ad2 = requests.get("http://127.0.0.1:8000/bus_home9/")
+      #  ad3 = requests.get("http://127.0.0.1:8000/bus_home10/")
+         
+       # res8 = ad1.json()
+       # res9 = ad2.json()
+       # res10 = ad3.json()
+        res8 = bus_special_code4.objects.all()
+        res9 = bus_special_avail4.objects.all()
+        res10 = bus_special_terms4.objects.all()
         return render(request, "bus_templates/trendcard4.html", {'res8': res8, 'res9': res9, 'res10': res10 })
     
 
@@ -344,15 +354,16 @@ class bus_update12(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main5(request):
     if request.method == "GET":
-        ad1 = requests.get("http://127.0.0.1:8000/bus_home11/")
-        ad2 = requests.get("http://127.0.0.1:8000/bus_home12/")
-        ad3 = requests.get("http://127.0.0.1:8000/bus_home13/")
+      #  ad1 = requests.get("http://127.0.0.1:8000/bus_home11/")
+      #  ad2 = requests.get("http://127.0.0.1:8000/bus_home12/")
+      #  ad3 = requests.get("http://127.0.0.1:8000/bus_home13/")
         
-        
-        res = ad1.json()
-        res1 = ad2.json()
-        res2 = ad3.json()
-        
+      #  res = ad1.json()
+      #  res1 = ad2.json()
+      #  res2 = ad3.json()
+        res = bus_firstbus_code5.objects.all()
+        res1 = bus_firstbus_get5.objects.all()
+        res2 = bus_firstbus_terms5.objects.all()
         return render(request, "bus_templates/trendcard5.html", {'res': res, 'res1': res1, 'res2': res2 })
     
 ############## card6  ##########
@@ -377,10 +388,12 @@ class bus_update15(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main6(request):
     if request.method == "GET":
-        ad1 = requests.get("http://127.0.0.1:8000/bus_home14/")
-        ad2 = requests.get("http://127.0.0.1:8000/bus_home15/")
-        res = ad1.json()
-        res1 = ad2.json()
+      #  ad1 = requests.get("http://127.0.0.1:8000/bus_home14/")
+      #  ad2 = requests.get("http://127.0.0.1:8000/bus_home15/")
+      #  res = ad1.json()
+      #  res1 = ad2.json()
+        res = bus_busday_terms6.objects.all()
+        res1 = bus_busday_image6.objects.all()
         return render(request, "bus_templates/trendcard6.html", {'res': res, 'res1': res1 })
     
 
@@ -396,8 +409,9 @@ class bus_update18(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main8(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/bus_home18/")
-        res7=ad.json()
+    #   ad=requests.get("http://127.0.0.1:8000/bus_home18/")
+     #   res7=ad.json()
+        res7= bus_easeday7.objects.all()
         return render(request,"bus_templates/trendcard7.html",{'res7':res7})
 
 
@@ -413,11 +427,10 @@ class bus_update19(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=bus_weekday8_serialization
 def bus_main9(request):
     if request.method=="GET":
-        ad=requests.get(" http://127.0.0.1:8000/bus_home19/")
-        res8=ad.json()
+     #   ad=requests.get(" http://127.0.0.1:8000/bus_home19/")
+      #  res8=ad.json()
+        res = bus_weekday8.objects.all()
         return render(request,"bus_templates/trendcard8.html",{'res8':res8})
-
-
 
 
 ################# card9 ################
@@ -432,8 +445,9 @@ class bus_update21(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main11(request):
     if request.method=="GET":
-        ad=requests.get(" http://127.0.0.1:8000/bus_home22/")
-        res9=ad.json()
+        # ad=requests.get(" http://127.0.0.1:8000/bus_home22/")
+        #res9=ad.json()
+        res9= bus_offer9.objects.all()
         return render(request,"bus_templates/trendcard9.html",{'res9':res9})
     
 
@@ -452,8 +466,9 @@ class bus_update20(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main13(request):
     if request.method=="GET":
-        ad=requests.get(" http://127.0.0.1:8000/bus_home20/")
-        res12=ad.json()
+      #  ad=requests.get(" http://127.0.0.1:8000/bus_home20/")
+      #  res12=ad.json()
+        res12=bus_fest10.objects.all()
         return render(request,"bus_templates/trendcard10.html",{'res12':res12})
 
 
@@ -470,8 +485,9 @@ class bus_update22(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main14(request):
     if request.method=="GET":
-        ad=requests.get(" http://127.0.0.1:8000/bus_home21/")
-        res13=ad.json()
+      #  ad=requests.get(" http://127.0.0.1:8000/bus_home21/")
+      #  res13=ad.json()
+        res13=bus_icici11.objects.all()
         return render(request,"bus_templates/trendcard11.html",{'res13':res13})
 
 
@@ -488,8 +504,9 @@ class bus_update23(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=bus_holiday12_serialization
 def bus_main15(request):
     if request.method=="GET":
-        ad=requests.get(" http://127.0.0.1:8000/bus_home23/")
-        res15=ad.json()
+       # ad=requests.get(" http://127.0.0.1:8000/bus_home23/")
+       # res15=ad.json()
+        res15=bus_holiday12.objects.all()
         return render(request,"bus_templates/trendcard12.html",{'res15':res15})
     
 
@@ -505,8 +522,9 @@ class bus_update24(generics.RetrieveUpdateDestroyAPIView):
 
 def bus_main7(request):
     if request.method=="GET":
-        ad=requests.get(" http://127.0.0.1:8000/bus_home24/")
-        res7=ad.json()
+      #  ad=requests.get(" http://127.0.0.1:8000/bus_home24/")
+      #  res7=ad.json()
+        res7=bus_ride13.objects.all()
         return render(request,"bus_templates/trendcard13.html",{'res7':res7})
     
 
@@ -525,6 +543,7 @@ class Busformupdate(generics.RetrieveUpdateDestroyAPIView):
 
 def BusSearchForm(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/Bus/")
-        res=ad.json()
-    return render(request,"bus_templates/search.html",{'res':res})
+      #  ad=requests.get("http://127.0.0.1:8000/Bus/")
+      #  res=ad.json()
+        res=bus_searchform.objects.all()
+        return render(request,"bus_templates/search.html",{'res':res})
