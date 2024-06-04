@@ -85,7 +85,7 @@ DATABASES = {
         'NAME':'booking',
         'POST':'3306',
         'PASSWORD':'admin123456',
-        'HOST':'',
+        'HOST':'teerdha.c528kg6649yp.us-east-1.rds.amazonaws.com',
         'USER':'admin'
     }
 }
