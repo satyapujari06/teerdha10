@@ -20,7 +20,7 @@ django-online-users
 django-redis
 django-simple-history
 django-taggit
-djangorestframework
+django-rest-framework
 gunicorn
 humanize
 idna
