@@ -131,9 +131,9 @@ def flight_offer_1(request):
     if request.method == "GET":
         #fo = requests.get("http://127.0.0.1:8000/flight_offerfirst_lc/")
        # flight = fo.json()
-        flight = flight_offer_first.objects.all()
        # fo1 = requests.get("http://127.0.0.1:8000/flight_offerfirst1_lc/")
         #flight_1 = fo1.json()
+        flight = flight_offer_first.objects.all()
         flight_1 = flight_offer_first1.objects.all()
         return render(request,"flight_templates/flight_offer_1.html", {'flight': flight, 'flight_1': flight_1})
 
